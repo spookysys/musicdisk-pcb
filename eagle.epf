@@ -19,7 +19,7 @@ UsedLibrary="attiny13.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="0 23 1919 1039"
+Loc="-8 -31 591 368"
 State=2
 Number=0
 
