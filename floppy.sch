@@ -9426,7 +9426,7 @@ CR2032 BATTERY RETAINER</description>
 <part name="G1" library="local" deviceset="BK-913" device=""/>
 <part name="LED1" library="led" deviceset="LED" device="5MM"/>
 <part name="IC1" library="attiny13" deviceset="ATTINY13-20*" device="PU" value="ATTINY13-20PU"/>
-<part name="R1" library="rcl" deviceset="R-EU_" device="0207/7" value="22K"/>
+<part name="R1" library="rcl" deviceset="R-EU_" device="0207/7" value="4.7K"/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X3" device=""/>
