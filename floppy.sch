@@ -9421,17 +9421,18 @@ CR2032 BATTERY RETAINER</description>
 <part name="C6" library="rcl" deviceset="C-EU" device="025-025X050" value="27pF"/>
 <part name="C7" library="rcl" deviceset="C-EU" device="025-025X050" value="22nF"/>
 <part name="Q1" library="transistor-npn" deviceset="BC547*" device="" value="BC547"/>
-<part name="L1" library="rcl" deviceset="L-EU" device="0207/7"/>
+<part name="L1" library="rcl" deviceset="L-EU" device="0207/7" value="62nH"/>
 <part name="S1" library="switch" deviceset="TL36PO" device=""/>
 <part name="G1" library="local" deviceset="BK-913" device=""/>
 <part name="LED1" library="led" deviceset="LED" device="5MM"/>
 <part name="IC1" library="attiny13" deviceset="ATTINY13-20*" device="PU" value="ATTINY13-20PU"/>
-<part name="R1" library="rcl" deviceset="R-EU_" device="0207/7" value="4.7K"/>
+<part name="R1" library="rcl" deviceset="R-EU_" device="0207/7" value="5.6K"/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X3" device=""/>
 <part name="P+2" library="supply1" deviceset="VCC" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
+<part name="G2" library="local" deviceset="BK-913" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9463,6 +9464,7 @@ CR2032 BATTERY RETAINER</description>
 <instance part="JP1" gate="A" x="20.32" y="22.86"/>
 <instance part="P+2" gate="VCC" x="5.08" y="20.32" rot="R90"/>
 <instance part="GND2" gate="1" x="-2.54" y="20.32"/>
+<instance part="G2" gate="G$1" x="154.94" y="88.9" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -9583,15 +9585,16 @@ CR2032 BATTERY RETAINER</description>
 <wire x1="134.62" y1="76.2" x2="134.62" y2="106.68" width="0.1524" layer="91"/>
 <junction x="134.62" y="106.68"/>
 <wire x1="63.5" y1="106.68" x2="-12.7" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="G1" gate="G$1" pin="V+"/>
-<wire x1="154.94" y1="83.82" x2="154.94" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="1"/>
 <pinref part="IC1" gate="G$1" pin="VCC"/>
 <wire x1="-5.08" y1="71.12" x2="-12.7" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="-12.7" y1="71.12" x2="-12.7" y2="67.564" width="0.1524" layer="91"/>
 <wire x1="-12.7" y1="106.68" x2="-12.7" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="P+1" gate="VCC" pin="VCC"/>
+<pinref part="G2" gate="G$1" pin="V+"/>
+<wire x1="154.94" y1="93.98" x2="154.94" y2="106.68" width="0.1524" layer="91"/>
 <junction x="154.94" y="106.68"/>
+<junction x="-12.7" y="71.12"/>
 </segment>
 <segment>
 <pinref part="JP1" gate="A" pin="3"/>
@@ -9631,11 +9634,18 @@ CR2032 BATTERY RETAINER</description>
 <junction x="43.18" y="38.1"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <junction x="157.48" y="38.1"/>
+<junction x="-12.7" y="53.34"/>
 </segment>
 <segment>
 <pinref part="JP1" gate="A" pin="2"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="-2.54" y1="22.86" x2="17.78" y2="22.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$9" class="0">
+<segment>
+<pinref part="G1" gate="G$1" pin="V+"/>
+<pinref part="G2" gate="G$1" pin="V-"/>
 </segment>
 </net>
 </nets>
