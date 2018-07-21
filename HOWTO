@@ -1,0 +1,27 @@
+
+SHOPPING LIST
+
+Components - see components subfolder
+Also get a socket for the ATtiny, you don't really want to solder it in place
+Wire for the little coil - see specs in components file 
+PCBs - render with Eagle and order for ~ $5 from Seeed Studio
+ATtiny programmer - see https://www.sparkfun.com/products/11801
+
+Notes:
+* Must be the 20Mhz version of the ATtiny. Still not really guaranteed to work, as we are overclocking to 32MHz but haven't seen any issues.
+* The little coil must be the right wire diameter, number of turns, coil diameter. You're likely to overshoot the 96MHz frequency printed on the board. Press the coil together to reduce the frequency until you're at 96MHz.
+* The battery must be the rechargeable LIR2032 type. The usual non-rechargeable CB2032 doesn't have enough wattage.
+
+revolt.hex is a binary that you can upload to the ATtiny without having to mess around with the source. If you _do_ want to mess with the source, this is located in http://github.com/spookysys/attiny-synth
+
+
+HOWTO
+
+1. Open project in Eagle
+2. Follow tutorial on Seeed studio for their most basic cards (they have a prototype program for around $5 for 10 cards), and order the cards
+3. Buy the components and the rest from shopping list above
+4. Make a coil by turning wire around a screwdriver of the right size. Look at the photo.
+5. Solder everything
+6. Program the included revolt.hex to your ATtiny
+7. Insert LIR2032 battery and turn the unit on, LED should light up. After 3 minutes when the song is over it should blink.
+8. Search for the signal on your rado. Press the coil together until you hit 96 MHz.
