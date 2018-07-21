@@ -26,9 +26,24 @@ HOW TO MAKE
 3. Buy the components and the rest from shopping list above.
 4. Make a coil by turning wire around a screwdriver of the right size. Look at the photo.
 5. Solder everything.
-6. Program the included revolt.hex to your ATtiny.
+6. Program the included synth.hex to your ATtiny as described below. Set fuses then upload build.
 7. Insert LIR2032 battery and turn the unit on, LED should light up. After 3 minutes when the song is over it should blink.
 8. Search for the signal on your rado. Press the coil together until you hit 96 MHz.
+
+
+PROGRAM
+
+Hoe to program the ATtiny using avrdude and usbtiny programmer
+
+# Set fuses to defaults (not required)
+avrdude -c usbtiny -p attiny85 -U lfuse:w:0x62:m -U hfuse:w:0xdf:m -U efuse:w:0xff:m
+
+# Set 16mhz clock and other required fuses
+avrdude -c usbtiny -p attiny85 -U lfuse:w:0xe1:m -U hfuse:w:0xdf:m -U efuse:w:0xff:m
+
+# Upload binary
+avrdude -c usbtiny -p attiny85 -U flash:w:synth.hex
+
 
 
 CONTACT
